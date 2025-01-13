@@ -79,4 +79,4 @@ Rides table:
 - Bob, Jonathan, Alex, and Alice each have one ride, and we order them by their total distances.
 - Donald did not take any rides, so the distance traveled by him is `0`.
 
-**Link to the problem**: [Top Travellers](https://leetcode.com/problems/top-travellers/)
+**Link to the problem**: [Top Travellers]((https://leetcode.com/problems/top-travellers/description/))
