@@ -1,83 +1,82 @@
 ## Problem: Top Travellers
 Write a query to find the top travellers and their total travel distance.
 
-Table: Users
+### Table: Users
 
-+---------------+---------+
-| Column Name   | Type    |
-+---------------+---------+
-| id            | int     |
-| name          | varchar |
-+---------------+---------+
-id is the column with unique values for this table.
-name is the name of the user.
- 
+| Column Name | Type    |
+|-------------|---------|
+| id          | int     |
+| name        | varchar |
 
-Table: Rides
+- `id` is the column with unique values for this table.
+- `name` is the name of the user.
 
-+---------------+---------+
-| Column Name   | Type    |
-+---------------+---------+
-| id            | int     |
-| user_id       | int     |
-| distance      | int     |
-+---------------+---------+
-id is the column with unique values for this table.
-user_id is the id of the user who traveled the distance "distance".
- 
+### Table: Rides
 
+| Column Name | Type    |
+|-------------|---------|
+| id          | int     |
+| user_id     | int     |
+| distance    | int     |
+
+- `id` is the column with unique values for this table.
+- `user_id` is the id of the user who traveled the distance "distance".
+
+---
+
+### Task
 Write a solution to report the distance traveled by each user.
 
-Return the result table ordered by travelled_distance in descending order, if two or more users traveled the same distance, order them by their name in ascending order.
+- Return the result table ordered by `travelled_distance` in **descending order**.
+- If two or more users traveled the same distance, order them by their `name` in **ascending order**.
 
-The result format is in the following example.
+The result format is shown in the following example.
 
- 
+---
 
-Example 1:
+### Example 1:
 
-Input: 
+**Input:**
+
 Users table:
-+------+-----------+
-| id   | name      |
-+------+-----------+
-| 1    | Alice     |
-| 2    | Bob       |
-| 3    | Alex      |
-| 4    | Donald    |
-| 7    | Lee       |
-| 13   | Jonathan  |
-| 19   | Elvis     |
-+------+-----------+
-Rides table:
-+------+----------+----------+
-| id   | user_id  | distance |
-+------+----------+----------+
-| 1    | 1        | 120      |
-| 2    | 2        | 317      |
-| 3    | 3        | 222      |
-| 4    | 7        | 100      |
-| 5    | 13       | 312      |
-| 6    | 19       | 50       |
-| 7    | 7        | 120      |
-| 8    | 19       | 400      |
-| 9    | 7        | 230      |
-+------+----------+----------+
-Output: 
-+----------+--------------------+
-| name     | travelled_distance |
-+----------+--------------------+
-| Elvis    | 450                |
-| Lee      | 450                |
-| Bob      | 317                |
-| Jonathan | 312                |
-| Alex     | 222                |
-| Alice    | 120                |
-| Donald   | 0                  |
-+----------+--------------------+
-Explanation: 
-Elvis and Lee traveled 450 miles, Elvis is the top traveler as his name is alphabetically smaller than Lee.
-Bob, Jonathan, Alex, and Alice have only one ride and we just order them by the total distances of the ride.
-Donald did not have any rides, the distance traveled by him is 0.
+| id | name      |
+|----|-----------|
+| 1  | Alice     |
+| 2  | Bob       |
+| 3  | Alex      |
+| 4  | Donald    |
+| 7  | Lee       |
+| 13 | Jonathan  |
+| 19 | Elvis     |
 
-**Link to the problem**: [Top Travellers]([https://leetcode.com/problems/top-travellers/](https://leetcode.com/problems/top-travellers/description/))
+Rides table:
+| id | user_id | distance |
+|----|---------|----------|
+| 1  | 1       | 120      |
+| 2  | 2       | 317      |
+| 3  | 3       | 222      |
+| 4  | 7       | 100      |
+| 5  | 13      | 312      |
+| 6  | 19      | 50       |
+| 7  | 7       | 120      |
+| 8  | 19      | 400      |
+| 9  | 7       | 230      |
+
+**Output:**
+
+| name      | travelled_distance |
+|-----------|--------------------|
+| Elvis     | 450                |
+| Lee       | 450                |
+| Bob       | 317                |
+| Jonathan  | 312                |
+| Alex      | 222                |
+| Alice     | 120                |
+| Donald    | 0                  |
+
+**Explanation:**
+- Elvis and Lee traveled 450 miles, but Elvis is the top traveler as his name is alphabetically smaller than Lee.
+- Bob, Jonathan, Alex, and Alice each have one ride, and we order them by their total distances.
+- Donald did not take any rides, so the distance traveled by him is `0`.
+
+**Link to the problem**: [Top Travellers](https://leetcode.com/problems/top-travellers/)
