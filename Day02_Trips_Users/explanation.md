@@ -34,10 +34,4 @@ We need to calculate the daily cancellation rate for taxi requests where both th
 
 ---
 
-#### Complexity Analysis
-- **Time Complexity**:
-  - Joining tables: `O(n + m)` where `n` is the size of `Trips` and `m` is the size of `Users`.
-  - Grouping and aggregation: `O(n)`.
 
-- **Space Complexity**:
-  - Temporary space for joins and grouped results: `O(n + m)`.
